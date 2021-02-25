@@ -36,3 +36,31 @@ footer {
     background-color: aquamarine;
     color: black;
 }
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: green;
+}
+
+a.brand {
+    color: yellow;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row.center {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
