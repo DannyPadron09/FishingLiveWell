@@ -18,11 +18,11 @@ function App() {
                     {
                         data.lures.map(lure => (
                             <div key={lure._id} className="card">
-                        <a href="lure.html">
-                            <img className="medium" src={lure.lureImage} alt="lure" />
+                        <a href={`/lure/${lure._id}`}>
+                            <img className="medium" src={lure.lureImage} alt={lure.product} />
                         </a>
                         <div className="card-body">
-                            <a href="lure.html">
+                            <a href={`/lure/${lure._id}`}>
                                 <h2>{lure.lureBrand}</h2>
                                 <h3>{lure.product}</h3>
                                 <h3>{lure.lureColor}</h3>
