@@ -1,10 +1,12 @@
+import React from 'react'
+import data from './data'
 
 function App() {
   return (
-    <div class="grid-container">
-            <header class="row">
+    <div className="grid-container">
+            <header className="row">
                 <div>
-                    <a class="brand" href="index.html">Fishing Live Well</a>
+                    <a className="brand" href="index.html">Fishing Live Well</a>
                 </div>
                 <div>
                     <a href="myLures.html">My Lures</a>
@@ -12,112 +14,34 @@ function App() {
                 </div>
             </header>
             <main>
-                <div class="row center">
-                    <div class="card">
+                <div className="row center">
+                    {
+                        data.lures.map(lure => (
+                            <div key={lure._id} className="card">
                         <a href="lure.html">
-                            <img class="medium" src="./images/lure1.jpg" alt="lure" />
+                            <img className="medium" src={lure.lureImage} alt="lure" />
                         </a>
-                        <div class="card-body">
+                        <div className="card-body">
                             <a href="lure.html">
-                                <h2>BioSpawn VileCraw 4"</h2>
+                                <h2>{lure.lureBrand}</h2>
+                                <h3>{lure.product}</h3>
+                                <h3>{lure.lureColor}</h3>
                             </a>
-                            <div class="do-i-own">
-                                <span><i class="fas fa-check-square"></i></span>
-                                <span><i class="fas fa-check-square"></i></span>
+                            <div className="do-i-own">
+                                Do I own? <br />
+                                <span>Yes<i className="fas fa-check-square"></i></span>
+                                <span>No<i className="fas fa-check-square"></i></span>
                             </div>
-                            <div class="price">
-                                $5
+                            <div className="price">
+                                {lure.price}
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <a href="lure.html">
-                            <img class="medium" src="./images/lure1.jpg" alt="lure" />
-                        </a>
-                        <div class="card-body">
-                            <a href="lure.html">
-                                <h2>BioSpawn VileCraw 4"</h2>
-                            </a>
-                            <div class="do-i-own">
-                                <span><i class="fas fa-check-square"></i></span>
-                                <span><i class="fas fa-check-square"></i></span>
-                            </div>
-                            <div class="price">
-                                $5
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <a href="lure.html">
-                            <img class="medium" src="./images/lure1.jpg" alt="lure" />
-                        </a>
-                        <div class="card-body">
-                            <a href="lure.html">
-                                <h2>BioSpawn VileCraw 4"</h2>
-                            </a>
-                            <div class="do-i-own">
-                                <span><i class="fas fa-check-square"></i></span>
-                                <span><i class="fas fa-check-square"></i></span>
-                            </div>
-                            <div class="price">
-                                $5
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <a href="lure.html">
-                            <img class="medium" src="./images/lure1.jpg" alt="lure" />
-                        </a>
-                        <div class="card-body">
-                            <a href="lure.html">
-                                <h2>BioSpawn VileCraw 4"</h2>
-                            </a>
-                            <div class="do-i-own">
-                                <span><i class="fas fa-check-square"></i></span>
-                                <span><i class="fas fa-check-square"></i></span>
-                            </div>
-                            <div class="price">
-                                $5
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <a href="lure.html">
-                            <img class="medium" src="./images/lure1.jpg" alt="lure" />
-                        </a>
-                        <div class="card-body">
-                            <a href="lure.html">
-                                <h2>BioSpawn VileCraw 4"</h2>
-                            </a>
-                            <div class="do-i-own">
-                                <span><i class="fas fa-check-square"></i></span>
-                                <span><i class="fas fa-check-square"></i></span>
-                            </div>
-                            <div class="price">
-                                $5
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <a href="lure.html">
-                            <img class="medium" src="./images/lure1.jpg" alt="lure" />
-                        </a>
-                        <div class="card-body">
-                            <a href="lure.html">
-                                <h2>BioSpawn VileCraw 4"</h2>
-                            </a>
-                            <div class="do-i-own">
-                                <span><i class="fas fa-check-square"></i></span>
-                                <span><i class="fas fa-check-square"></i></span>
-                            </div>
-                            <div class="price">
-                                $5
-                            </div>
-                        </div>
-                    </div>
+                        ))
+                    }
                 </div>
             </main>
-            <footer class="row center">
+            <footer className="row center">
                 by: Danny Padron
             </footer>
         </div>
