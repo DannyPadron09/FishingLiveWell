@@ -68,6 +68,33 @@ a:hover {
   color: green;
 }
 
+/* Gets rid of bullet points in individual lure pages*/
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+li {
+  margin-top: 1rem;
+}
+
+button {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #a4a4a4 solid;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: aquamarine;
+  cursor: copy;
+}
+
+button.block {
+  width: 100%;
+}
+
 /* Keeps main app brand title different*/
 a.brand {
   color: yellow;
@@ -75,6 +102,7 @@ a.brand {
   font-weight: bold;
 }
 
+/* Keeps all info in a row side by side*/
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -91,6 +119,15 @@ a.brand {
 
 .row.top {
   align-items: flex-start;
+}
+
+/* Styling for individual lure pages*/
+.lure-stats {
+  flex: 1 1 25rem;
+}
+
+.add-lure {
+  flex: 2 1 50rem;
 }
 
 /* Image style*/

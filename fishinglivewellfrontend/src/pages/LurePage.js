@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Lure from '../components/Lure'
 import data from '../data'
 
@@ -14,10 +15,16 @@ export default function LurePage(props) {
 
     return (
         <div>
+            <Link to="/">Back to All Lures</Link>
+
             <div className="row top">
+
+                {/* Div that handles lure picture*/}
                 <div className="lure-picture">
                     <img className="large" src={lure.lureImage} alt={lure.lureBrand} />
                 </div>
+
+                {/* Div that handles all info about the individual lure*/}
                 <div className="lure-stats">
                    <ul>
                        <li>
@@ -50,6 +57,8 @@ export default function LurePage(props) {
                        </li>
                    </ul>
                 </div>
+
+                {/* The div that keeps the action of adding lure to tackle box*/}
                 <div className="add-lure">
                     <div className="card card-body">
                         <ul>
@@ -64,6 +73,7 @@ export default function LurePage(props) {
                         </ul>
                     </div>
                 </div>
+                
             </div>
         </div>
     )
