@@ -1,11 +1,12 @@
 import React from 'react'
-import data from './data'
-import Lure from './components/Lure'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter  as Router, Switch, Route, Link} from 'react-router-dom'
+import HomePage from './pages/HomePage';
+import LurePage from './pages/LurePage';
+
 
 function App() {
   return (
-      <BrowserRouter>
+      <Router>
         <div className="grid-container">
             <header className="row">
                 <div>
@@ -17,19 +18,16 @@ function App() {
                 </div>
             </header>
             <main>
-                <div className="row center">
-                    {
-                        data.lures.map(lure => (
-                            <Lure key={lure._id} lure={lure} />
-                        ))
-                    }
-                </div>
+
+                <Route path="/" component={HomePage} exact></Route>
+                <Route path="/lure/:id" component={LurePage}></Route>
+
             </main>
             <footer className="row center">
                 by: Danny Padron
             </footer>
         </div>
-      </BrowserRouter>
+      </Router>
   );
 }
 
