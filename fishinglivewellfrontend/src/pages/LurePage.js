@@ -10,7 +10,10 @@ export default function LurePage(props) {
     
     // If lure doesn't exist 
     if(!lure) {
-        return <div>Product Not Found</div>
+        return <div>
+                    <Link to='/'>Back to All Lures</Link> <br />
+                    Product Not Found
+                </div>
     }
 
     return (
@@ -73,7 +76,7 @@ export default function LurePage(props) {
                         </ul>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     )
