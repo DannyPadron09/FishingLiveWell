@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Lure from '../components/Lure'
 import data from '../data'
 
 export default function LurePage(props) {
