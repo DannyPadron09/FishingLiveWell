@@ -89,6 +89,10 @@ a.brand {
   flex-wrap: wrap;
 }
 
+.row.top {
+  align-items: flex-start;
+}
+
 /* Image style*/
 img {
   border-radius: 0.5rem;
