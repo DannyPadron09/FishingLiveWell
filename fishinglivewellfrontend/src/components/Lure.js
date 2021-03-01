@@ -3,6 +3,7 @@ import React from 'react'
 export default function Lure(props) {
 
     const { lure } = props
+    
     return (
         <div key={lure._id} className="card">
             <a href={`/lure/${lure._id}`}>

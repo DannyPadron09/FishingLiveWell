@@ -1,10 +1,12 @@
 import React from 'react'
 import data from './data'
 import Lure from './components/Lure'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="grid-container">
+      <BrowserRouter>
+        <div className="grid-container">
             <header className="row">
                 <div>
                     <a className="brand" href="index.html">Fishing Live Well</a>
@@ -27,6 +29,7 @@ function App() {
                 by: Danny Padron
             </footer>
         </div>
+      </BrowserRouter>
   );
 }
 
