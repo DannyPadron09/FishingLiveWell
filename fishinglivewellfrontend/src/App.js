@@ -1,5 +1,6 @@
 import React from 'react'
 import data from './data'
+import Lure from './components/Lure'
 
 function App() {
   return (
@@ -9,34 +10,15 @@ function App() {
                     <a className="brand" href="index.html">Fishing Live Well</a>
                 </div>
                 <div>
-                    <a href="myLures.html">My Lures</a>
-                    <a href="signin.html">Sign In</a>
+                    <a href="/myLures">My Lures  </a>
+                    <a href="/signin">  Sign In</a>
                 </div>
             </header>
             <main>
                 <div className="row center">
                     {
                         data.lures.map(lure => (
-                            <div key={lure._id} className="card">
-                        <a href={`/lure/${lure._id}`}>
-                            <img className="medium" src={lure.lureImage} alt={lure.product} />
-                        </a>
-                        <div className="card-body">
-                            <a href={`/lure/${lure._id}`}>
-                                <h2>{lure.lureBrand}</h2>
-                                <h3>{lure.product}</h3>
-                                <h3>{lure.lureColor}</h3>
-                            </a>
-                            <div className="do-i-own">
-                                Do I own? <br />
-                                <span>Yes<i className="fas fa-check-square"></i></span>
-                                <span>No<i className="fas fa-check-square"></i></span>
-                            </div>
-                            <div className="price">
-                                {lure.price}
-                            </div>
-                        </div>
-                    </div>
+                            <Lure key={lure._id} lure={lure} />
                         ))
                     }
                 </div>
