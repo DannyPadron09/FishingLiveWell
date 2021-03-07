@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import data from '../data'
+import Checkbox from '../components/Checkbox'
+
 
 export default function LurePage(props) {
 
 
     const lure = data.lures.find(x => x._id === props.match.params.id)
-    
+    const [checked, setCheckbox] = useState(false)
+
+    function handleCheckboxChange(event) {
+        this.setState({ checked: event.target.checked })
+    }
+
+
     // If lure doesn't exist 
     if(!lure) {
         return <div>
@@ -51,7 +59,10 @@ export default function LurePage(props) {
                        </li>
                        <li>
                            <p>
-                               Do I own? (checkboxes)
+                                <div className="do-i-own">
+                                    <span style={{marginLeft: 8}}>Do I own?</span>
+                                    <Checkbox checked={checked} onChange={handleCheckboxChange} />
+                                </div>
                            </p>
                        </li>
                        <li>
