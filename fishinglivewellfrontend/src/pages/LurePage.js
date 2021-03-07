@@ -75,11 +75,16 @@ export default function LurePage(props) {
                         <ul>
                             <li>
                                 <div className="row">
-                                    <div>Did I purchase?</div>
+                                    <div>Fish this Lure has caught:</div>
                                 </div>
                             </li>
+                            <br />
                             <li>
-                                <button className="primary block">Add to Tackle Box</button>
+                                "Listed fish would go here"
+                            </li>
+                            <br />
+                            <li>
+                                <button className="primary block">Add Fish</button>
                             </li>
                         </ul>
                     </div>
