@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Checkbox from './Checkbox'
+
 
 export default function Lure(props) {
 
     const { lure } = props
+    const [checked, setCheckbox] = useState(false)
+
+    function handleCheckboxChange(event) {
+        this.setState({ checked: event.target.checked })
+    }
     
     return (
         <div key={lure._id} className="card">
@@ -16,9 +23,7 @@ export default function Lure(props) {
                     <h3>{lure.lureColor}</h3>
                 </a>
                 <div className="do-i-own">
-                    Do I own? <br />
-                    <span>Yes<i className="fas fa-check-square"></i></span>
-                    <span>No<i className="fas fa-check-square"></i></span>
+                    <Checkbox checked={checked} onChange={handleCheckboxChange} />
                 </div>
                 <div className="price">
                     {lure.price}
