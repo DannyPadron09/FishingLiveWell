@@ -1,6 +1,6 @@
 import { LURE_LIST_FAIL, LURE_LIST_REQUEST, LURE_LIST_SUCCESS } from "../constant/lureConstant"
 
-export const lureListReducer = (state = {lures:[]}, action) => {
+export const lureListReducer = (state = {loading: true, lures:[]}, action) => {
 
     switch(action.type){
 
