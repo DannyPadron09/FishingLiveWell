@@ -1,0 +1,5 @@
+export const LURE_LIST_REQUEST = 'LURE_LIST_REQUEST'
+
+export const LURE_LIST_SUCCESS = 'LURE_LIST_SUCCESS'
+
+export const LURE_LIST_FAIL = 'LURE_LIST_FAIL'
