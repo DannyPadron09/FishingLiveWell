@@ -1,12 +1,12 @@
-import data from "./data"
-import {createStore, compose, applyMiddleware} from 'redux'
+import {createStore, compose, applyMiddleware, combineReducers} from 'redux'
 import thunk from 'redux-thunk'
+import { lureListReducer } from "./reducers/lureReducer"
 
 const initialState = {}
 
-const reducer = (state, action) => {
-    return {lures: data.lures}
-}
+const reducer = combineReducers({
+    lureList: lureListReducer, 
+})
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose 
 

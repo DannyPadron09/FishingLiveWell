@@ -1,28 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React, { useEffect } from 'react'
 import Lure from '../components/Lure'
 import LoadingBox from '../components/LoadingBox'
 import MessageBox from '../components/MessageBox'
+import { useDispatch, useSelector } from 'react-redux'
+import { listLures } from '../actions/lureActions'
 
 export default function HomePage() {
 
-    const [lures, setLures] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(false)
+    const dispatch = useDispatch()
+
+    const lureList = useSelector( state => state.lureList)
+
+    const { loading, error, lures} = lureList
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                setLoading(true)
-                const { data } = await axios.get('/api/lures')
-                setLoading(false)
-                setLures(data)
-            } catch (err) {
-                setError(err.message)
-                setLoading(false)
-            }
-        }
-        fetchData()
+        dispatch(listLures())
     }, [])
 
     return (
