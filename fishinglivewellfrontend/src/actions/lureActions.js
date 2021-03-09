@@ -13,12 +13,15 @@ export const listLures = () => async (dispatch) => {
     }
 }
 
-export const lureDetails = (lureId) => async(dispatch) => {
+export const lureStats = (lureId) => async (dispatch) => {
     dispatch({ type: LURE_DETAILS_REQUEST, payload: lureId})
     try {
-        const {data} = Axios.get(`/api/lures/${lureId}`)
+        const {data} = await Axios.get(`/api/lures/${lureId}`)
         dispatch({type: LURE_DETAILS_SUCCESS, payload: data})
-    } catch(error) {
-        dispatch({type: LURE_DETAILS_FAIL, payload: error.response && error.response.data.message ? error.response.data.message : error.message})
+    } catch (error) {
+        dispatch({
+            type: LURE_DETAILS_FAIL, 
+            payload: error.message
+        })
     }
 }
