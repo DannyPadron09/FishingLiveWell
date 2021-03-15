@@ -8,7 +8,9 @@ const data = {
             price: "$4.99",
             doIOwn: "true",
             lureImage: "/images/lure1.jpg",
-            fishCaught: ["Large Mouth Bass"],
+            fishCaught: [
+                "Large Mouth Bass"
+            ],
         },
         {
             _id: '2',

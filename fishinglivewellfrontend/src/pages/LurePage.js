@@ -80,7 +80,7 @@ export default function LurePage(props) {
                                 </p>
                             </li>
                             <li>
-                                Fish Stats: <span>Fish Caught</span>
+                                Fish Stats: <span>{lure.fishCaught}</span>
                             </li>
                         </ul>
                     </div>
