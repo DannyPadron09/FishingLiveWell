@@ -5,10 +5,7 @@ export const livewellReducer = (state = {livewellFish:[]}, action) => {
         case LIVEWELL_ADD_FISH:
             const fish = action.payload
             return {
-                ...state, 
-                livewellFish: state.livewellFish.map((x) => 
-                    fish = x 
-                )
+                ...state, livewellFish: [...state.livewellFish, fish]
             }
 
         default:

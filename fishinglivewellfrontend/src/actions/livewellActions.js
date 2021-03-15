@@ -6,8 +6,8 @@ export const addToLivewell = (lureId, fishCaught) => async(dispatch, getState) =
     dispatch({
         type: LIVEWELL_ADD_FISH,
         payload:{
-            species = data.fishCaught.species,
-            weight = data.fishCaught.weight,
+            species: data.fishCaught.species,
+            weight: data.fishCaught.weight,
             lure: data._id,
             fishCaught,
         }

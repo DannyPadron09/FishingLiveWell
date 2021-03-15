@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addToLivewell } from '../actions/livewellActions'
 
 export default function FishCaught(props) {
     const lureId = props.match.params.id 
     const fishCaught = props.location.search
-        ? Number(props.location.search.split('=')[1])
-        : 1
+        ? Number(props.location.search.split('=')[0])
+        : 0
+
+    const dispatch = useDispatch()
+    useEffect(() => {
+        if (lureId) {
+            dispatch(addToLivewell(lureId, fishCaught))
+        }
+    }, [dispatch, lureId, fishCaught])
 
     return (
         <div>
