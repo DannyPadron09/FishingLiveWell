@@ -47,13 +47,13 @@ class FishForm extends React.Component {
                 <form>    
                     <label>
                         Fish Caught: 
-                        <input type="text" name="fishCaught" placeholder="Fish Species" value={this.state.fishSpecies} />
+                        <input type="text" name="fishCaught" placeholder="Fish Species"  />
                     </label>
                     <label>
                         Weight: 
-                        <input type="text" name="fishWeight" placeholder="Fish Weight" value={this.state.fishWeight} />
+                        <input type="text" name="fishWeight" placeholder="Fish Weight" />
                     </label>
-                    <button onClick={this.handleSubmit} className="primary block">Add Fish</button>
+                    <button onClick={this.changeHandler} className="primary block">Add Fish</button>
                 </form>
 
                 <h3>
