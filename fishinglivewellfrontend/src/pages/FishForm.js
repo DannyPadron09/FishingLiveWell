@@ -4,11 +4,14 @@ class FishForm extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = [
-            {
-                fishSpecies: [''],
-                fishWeight: [''],
-            }]
+        this.state = {
+            fishCaught:[
+                {
+                    fishSpecies: [''],
+                    fishWeight: [''],
+                }
+            ] 
+        }
 
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -37,23 +40,36 @@ class FishForm extends React.Component {
     }
 
     handleSubmit(event) {
-        event.preventDefault()
         alert('New fish added')
     }
 
     render() {
         return (
-            <form>    
-                <label>
-                    Fish Caught: 
-                    <input type="text" placeholder="Fish Species" value={this.state.fishSpecies} onChange={this.handleFishSpeciesChange} />
-                </label>
-                <label>
-                    Weight: 
-                    <input type="text" placeholder="Fish Weight" value={this.state.fishWeight} onChange={this.handleWeightChange} />
-                </label>
-                <button onClick={this.handleSubmit} className="primary block">Add Fish</button>
-            </form>
+            <div>
+                <form>    
+                    <label>
+                        Fish Caught: 
+                        <input type="text" placeholder="Fish Species" value={this.state.fishSpecies} onChange={this.handleFishSpeciesChange} />
+                    </label>
+                    <label>
+                        Weight: 
+                        <input type="text" placeholder="Fish Weight" value={this.state.fishWeight} onChange={this.handleWeightChange} />
+                    </label>
+                    <button onClick={this.handleSubmit} className="primary block">Add Fish</button>
+                </form>
+
+                <h3>
+                    Fish Stats
+                    <li>
+                        Fish Species: {this.fishSpecies}
+                    </li>
+                    <li>
+                        Fish Weight: {this.fishWeight}
+                    </li>
+                </h3>
+            </div>
+
+    
         )
     }
 }
