@@ -36,6 +36,8 @@ class FishForm extends React.Component {
         this.setState({[species]: weight})
     }
 
+    
+
     // handleSubmit(e) {
     //     e.preventDefault()
     //     alert('New fish added')

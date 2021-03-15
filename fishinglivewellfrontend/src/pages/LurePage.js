@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom'
 import { lureStats } from '../actions/lureActions'
 import LoadingBox from '../components/LoadingBox'
 import MessageBox from '../components/MessageBox'
-import Select from 'react-dropdown-select'
-import Checkbox from '../components/Checkbox'
-import styled from 'styled-components'
 import FishForm from './FishForm'
 
 
@@ -25,6 +22,8 @@ export default function LurePage(props) {
     useEffect(() => {
         dispatch(lureStats(lureId))
     }, [dispatch, lureId])
+
+    
     
     
     return (
