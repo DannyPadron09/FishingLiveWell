@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter  as Router, Route} from 'react-router-dom'
+import FishCaught from './pages/FishCaught';
 import HomePage from './pages/HomePage';
 import LurePage from './pages/LurePage';
 
@@ -21,6 +22,7 @@ function App() {
 
                 <Route path="/" component={HomePage} exact></Route>
                 <Route path="/lure/:id" component={LurePage}></Route>
+                <Route path="/livewell/:id?" component={FishCaught}></Route>
 
             </main>
             <footer className="row center">

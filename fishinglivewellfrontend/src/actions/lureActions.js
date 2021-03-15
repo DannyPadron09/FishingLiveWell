@@ -1,5 +1,11 @@
 import Axios from "axios"
-import { LURE_DETAILS_REQUEST, LURE_DETAILS_SUCCESS, LURE_DETAILS_FAIL, LURE_LIST_FAIL, LURE_LIST_REQUEST, LURE_LIST_SUCCESS } from "../constant/lureConstant"
+import { 
+    LURE_DETAILS_REQUEST, 
+    LURE_DETAILS_SUCCESS, 
+    LURE_DETAILS_FAIL, 
+    LURE_LIST_FAIL, 
+    LURE_LIST_REQUEST, 
+    LURE_LIST_SUCCESS } from "../constant/lureConstant"
 
 export const listLures = () => async (dispatch) => {
     dispatch({

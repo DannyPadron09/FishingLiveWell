@@ -19,7 +19,8 @@
   "homepage": "https://github.com/DannyPadron09/FishingLiveWell#readme",
   "dependencies": {
     "axios": "^0.21.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "react-dropdown-select": "^4.7.4"
   },
   "devDependencies": {
     "eslint": "^7.21.0",

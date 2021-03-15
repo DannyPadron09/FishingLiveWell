@@ -1,17 +1,21 @@
-import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import Checkbox from '../components/Checkbox'
-import styled from 'styled-components'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { lureStats } from '../actions/lureActions'
 import LoadingBox from '../components/LoadingBox'
 import MessageBox from '../components/MessageBox'
-import { lureStats } from '../actions/lureActions'
+import Select from 'react-dropdown-select'
+import Checkbox from '../components/Checkbox'
+import styled from 'styled-components'
+import FishForm from './FishForm'
 
 
 export default function LurePage(props) {
 
     const dispatch = useDispatch()
     const lureId = props.match.params.id
+    const fishTypes = ["Large Mouth Bass", "Peacock Bass"]
+    const [fishCaught, setFishSpecies] = useState(0)
 
     const lureDetails = useSelector((state) => state.lureDetails)
 
@@ -21,6 +25,10 @@ export default function LurePage(props) {
     useEffect(() => {
         dispatch(lureStats(lureId))
     }, [dispatch, lureId])
+
+    const addToLivewell = () => {
+        props.history.push(`/livewell/${lureId}?fishCaught=${fishCaught}`)
+    }
     
     
     return (
@@ -84,15 +92,31 @@ export default function LurePage(props) {
                                 <li>
                                     <div className="row">
                                         <div>Fish this Lure has caught:</div>
+                                        <div>
+                                            <FishForm />
+                                        </div>
                                     </div>
                                 </li>
                                 <br />
                                 <li>
-                                    "Listed fish would go here"
+                                    <div className="row">
+                                        <div>Fish Caught</div>
+                                        <div>
+                                            <select value={fishCaught} onChange={(e) => setFishSpecies(e.target.value)}>
+                                                {[...Array(lure.fishCaught).keys()].map(
+                                                    (x) => (
+                                                        <option key={x} value={x}>
+                                                            {x.fishCaught}
+                                                        </option>
+                                                    )
+                                                )}
+                                            </select>
+                                        </div>
+                                    </div>
                                 </li>
                                 <br />
                                 <li>
-                                    <button className="primary block">Add Fish</button>
+                                    <button onClick={addToLivewell} className="primary block">Add Fish</button>
                                 </li>
                             </ul>
                         </div>

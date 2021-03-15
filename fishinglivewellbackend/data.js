@@ -8,6 +8,7 @@ const data = {
             price: "$4.99",
             doIOwn: "true",
             lureImage: "/images/lure1.jpg",
+            fishCaught: ["Large Mouth Bass"],
         },
         {
             _id: '2',
@@ -17,6 +18,7 @@ const data = {
             price: "$4.99",
             doIOwn: "true",
             lureImage: "/images/lure2.jpg",
+            fishCaught: ["Peacock Bass", "Large Mouth Bass"],
         },
         {
             _id: '3',
@@ -26,6 +28,7 @@ const data = {
             price: "$5.29",
             doIOwn: "true",
             lureImage: "/images/lure3.jpg",
+            fishCaught: [],
         },
         {
             _id: '4',
@@ -35,6 +38,7 @@ const data = {
             price: "$6.99",
             doIOwn: "true",
             lureImage: "/images/lure4.jpg",
+            fishCaught: [],
         },
         {
             _id: '5',
@@ -44,6 +48,7 @@ const data = {
             price: "$3.79",
             doIOwn: "true",
             lureImage: "/images/lure5.jpg",
+            fishCaught: [],
         },
         {
             _id: '6',
@@ -53,6 +58,7 @@ const data = {
             price: "$4.99",
             doIOwn: "true",
             lureImage: "/images/lure6.jpg",
+            fishCaught: [],
         },
     ]
 }
