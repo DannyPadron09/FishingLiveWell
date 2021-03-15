@@ -5,52 +5,41 @@ class FishForm extends React.Component {
         super(props)
 
         this.state = {
-            fishCaught:[
-                {
-                    fishSpecies: [''],
-                    fishWeight: [''],
-                }
-            ] 
+                fishSpecies: '',
+                fishWeight: '', 
         }
 
-        this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleFishSpeciesChange = this.handleFishSpeciesChange.bind(this)
-        this.handleWeightChange = this.handleWeightChange.bind(this)
+        this.changeHandler = this.changeHandler.bind(this)
+        // this.handleSubmit = this.handleSubmit.bind(this)
+        // this.handleFishSpeciesChange = this.handleFishSpeciesChange.bind(this)
+        // this.handleWeightChange = this.handleWeightChange.bind(this)
     }
 
-    handleChange(event) {
-        this.setState({fishSpecies: event.target.value})
+    // handleFishSpeciesChange(e) {
+    //     this.setState(
+    //         {
+    //             fishSpecies: e.target.value,
+    //         }
+    //     )
+    // }
+
+    // handleWeightChange(e) {
+    //     this.setState(
+    //         {
+    //             fishWeight: e.target.value,
+    //         }
+    //     )
+    // }
+    changeHandler = (e) => {
+        let species = e.target.name
+        let weight = e.target.value 
+        this.setState({[species]: weight})
     }
 
-    handleFishSpeciesChange(e) {
-        this.setState(
-            {
-                fishSpecies: e.target.value,
-            }
-        )
-    }
-
-    handleWeightChange(e) {
-        this.setState(
-            {
-                fishWeight: e.target.value,
-            }
-        )
-    }
-
-    handleSubmit(e) {
-        e.preventDefault()
-        alert('New fish added')
-        this.setState(
-            {
-                fishCaught: {
-                    fishSpecies: e.target.value,
-                    fishWeight: e.target.value,
-                }
-            }
-        )
-    }
+    // handleSubmit(e) {
+    //     e.preventDefault()
+    //     alert('New fish added')
+    // }
 
     render() {
         return (
@@ -58,11 +47,11 @@ class FishForm extends React.Component {
                 <form>    
                     <label>
                         Fish Caught: 
-                        <input type="text" placeholder="Fish Species" value={this.state.fishSpecies} />
+                        <input type="text" name="fishCaught" placeholder="Fish Species" value={this.state.fishSpecies} />
                     </label>
                     <label>
                         Weight: 
-                        <input type="text" placeholder="Fish Weight" value={this.state.fishWeight} />
+                        <input type="text" name="fishWeight" placeholder="Fish Weight" value={this.state.fishWeight} />
                     </label>
                     <button onClick={this.handleSubmit} className="primary block">Add Fish</button>
                 </form>
@@ -71,12 +60,8 @@ class FishForm extends React.Component {
                     Fish Stats
                 </h3>
                 <p>
-                    {this.state.fishCaught.map((fish) => {
-                        <li>
-                            Fish Species: {fish.fishSpecies}
-                            Fish Weight: {fish.fishWeight}
-                        </li>
-                    })}
+                    {this.state.fishSpecies}
+                    {this.state.fishWeight}
                 </p>
             </div>
 
