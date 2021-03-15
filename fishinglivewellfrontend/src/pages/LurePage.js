@@ -110,7 +110,7 @@ export default function LurePage(props) {
                                 </li>
                                 <br />
                                 <li>
-                                    <button onClick={addToLivewell} className="primary block">Add Fish</button>
+                                    
                                 </li>
                             </ul>
                         </div>
