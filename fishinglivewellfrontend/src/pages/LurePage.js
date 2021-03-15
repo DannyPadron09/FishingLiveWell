@@ -72,14 +72,6 @@ export default function LurePage(props) {
                                 </h3>
                             </li>
                             <li>
-                                <p>
-                                    <div className="do-i-own">
-                                        <span style={{marginLeft: 8}}>Do I own?</span>
-                                        <input type="checkbox" value={lure.lureBrand} checked="checked" />
-                                    </div>
-                                </p>
-                            </li>
-                            <li>
                                 Fish Stats: <span>{lure.fishCaught}</span>
                             </li>
                         </ul>
