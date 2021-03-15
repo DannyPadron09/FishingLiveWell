@@ -21,13 +21,14 @@ class FishForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit}>    
                 <label>
-                    Fish Species:
-                    <select value={this.state.fishSpecies} onChange={this.handleChange}>
-                        <option value="Large Mouth Bass">Large Mouth Bass</option>
-                        <option value="Peacock Bass">Peacock Bass</option>
-                    </select>
+                    Fish Caught: 
+                    <input type="text" fishSpecies="fishSpecies" />
+                </label>
+                <label>
+                    Weight: 
+                    <input type="text" fishWeight="fishWeight" />
                 </label>
                 <input type="submit" value="submit" />
             </form>

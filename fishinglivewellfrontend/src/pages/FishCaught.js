@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function FishCaught(props) {
     const lureId = props.match.params.id 
@@ -8,6 +9,7 @@ export default function FishCaught(props) {
 
     return (
         <div>
+            <Link to="/">Back to All Lures</Link>
             <h1>Live Well</h1>
             <p>
                 ADD TO LIVEWELL : LureID: {lureId} FishCaught: {fishCaught}

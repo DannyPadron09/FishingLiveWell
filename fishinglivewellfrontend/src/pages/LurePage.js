@@ -83,7 +83,7 @@ export default function LurePage(props) {
                             <ul>
                                 <li>
                                     <div className="row">
-                                        <div>Fish this Lure has caught:</div>
+                                        <div>Add new fish to the LiveWell:</div>
                                         <div>
                                             <FishForm />
                                         </div>
@@ -92,18 +92,20 @@ export default function LurePage(props) {
                                 <br />
                                 <li>
                                     <div className="row">
-                                        <div>Fish Caught</div>
                                         <div>
+                                            
+                                        </div>
+                                        {/* <div>
                                             <select value={fishCaught} onChange={(e) => setFishSpecies(e.target.value)}>
                                                 {[...Array(lure.fishCaught).keys()].map(
                                                     (x) => (
-                                                        <option key={x} value={x}>
+                                                        <option key={x} value={x.fishCaught}>
                                                             {x.fishCaught}
                                                         </option>
                                                     )
                                                 )}
                                             </select>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </li>
                                 <br />
