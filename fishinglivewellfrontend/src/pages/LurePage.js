@@ -25,10 +25,6 @@ export default function LurePage(props) {
     useEffect(() => {
         dispatch(lureStats(lureId))
     }, [dispatch, lureId])
-
-    const addToLivewell = () => {
-        props.history.push(`/livewell/${lureId}?fishCaught=${fishCaught}`)
-    }
     
     
     return (
@@ -70,9 +66,6 @@ export default function LurePage(props) {
                                 <h3>
                                     {lure.price}
                                 </h3>
-                            </li>
-                            <li>
-                                Fish Stats: <span>{lure.fishCaught}</span>
                             </li>
                         </ul>
                     </div>
