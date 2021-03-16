@@ -5,9 +5,6 @@ import { addToLivewell } from '../actions/livewellActions'
 
 export default function FishCaught(props) {
     const lureId = props.match.params.id 
-    // const fishCaught = props.location.search
-    //     ? Number(props.location.search.split('=')[0])
-    //     : 0
 
     const fishCaught = (props.location.search).slice(12).split('%20').join(' ')
 

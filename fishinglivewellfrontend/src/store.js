@@ -3,7 +3,11 @@ import thunk from 'redux-thunk'
 import { livewellReducer } from './reducers/livewellReducer'
 import { lureDetailsReducer, lureListReducer } from "./reducers/lureReducer"
 
-const initialState = {}
+const initialState = {
+    livewellFish: {
+        fishCaught: localStorage.getItem('livewellFish') ? JSON.parse(localStorage.getItem('livewellFish')) : [],
+    }
+}
 
 const reducer = combineReducers({
     lureList: lureListReducer,
