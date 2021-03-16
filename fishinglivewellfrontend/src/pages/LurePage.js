@@ -4,14 +4,12 @@ import { Link } from 'react-router-dom'
 import { lureStats } from '../actions/lureActions'
 import LoadingBox from '../components/LoadingBox'
 import MessageBox from '../components/MessageBox'
-import FishForm from './FishForm'
 
 
 export default function LurePage(props) {
 
     const dispatch = useDispatch()
     const lureId = props.match.params.id
-    const fishTypes = ["Large Mouth Bass", "Peacock Bass"]
     const [fishCaught, setFishSpecies] = useState(0)
 
     const lureDetails = useSelector((state) => state.lureDetails)
@@ -82,7 +80,7 @@ export default function LurePage(props) {
                                         <form>    
                                             <label>
                                                 Fish Caught: 
-                                                <input type="text" name="fishCaught" placeholder="Fish Species"  />
+                                                <input type="text" name="fishCaught" placeholder="Fish Species" onChange={(e) => setFishSpecies(e.target.value)}  />
                                             </label>
                                             <label>
                                                 Weight: 
