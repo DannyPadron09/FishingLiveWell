@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { BrowserRouter  as Router, Link, Route} from 'react-router-dom'
 import FishCaught from './pages/FishCaught';
 import HomePage from './pages/HomePage';
@@ -6,6 +7,9 @@ import LurePage from './pages/LurePage';
 
 
 function App() {
+    const livewell = useSelector((state) => state.livewell)
+    const { livewellFish } = livewell 
+
   return (
       <Router>
         <div className="grid-container">
@@ -14,7 +18,9 @@ function App() {
                     <Link className="brand" to="index.html">Fishing Live Well</Link>
                 </div>
                 <div>
-                    <Link to="/myLures">My Lures  </Link>
+                    <Link to="/livewell">My Livewell {livewellFish.length > 0 && (
+                        <span className="badge">{livewellFish.length}</span>
+                    )}  </Link>
                     <Link to="/signin">  Sign In</Link>
                 </div>
             </header>

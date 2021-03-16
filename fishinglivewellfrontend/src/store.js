@@ -5,7 +5,9 @@ import { lureDetailsReducer, lureListReducer } from "./reducers/lureReducer"
 
 const initialState = {
     livewellFish: {
-        fishCaught: localStorage.getItem('livewellFish') ? JSON.parse(localStorage.getItem('livewellFish')) : [],
+        fishCaught: localStorage.getItem('livewellFish')
+        ? JSON.parse(localStorage.getItem('livewellFish'))
+        : [],
     }
 }
 
