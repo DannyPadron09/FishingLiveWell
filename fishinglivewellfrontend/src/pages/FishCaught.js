@@ -1,12 +1,17 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addToLivewell } from '../actions/livewellActions'
+import MessageBox from '../components/MessageBox'
 
 export default function FishCaught(props) {
     const lureId = props.match.params.id 
 
     const fishCaught = (props.location.search).slice(12).split('%20').join(' ')
+
+    const livewell = useSelector((state) => state.livewell)
+    const { livewellFish } = livewell
+
 
     const dispatch = useDispatch()
     useEffect(() => {
@@ -18,10 +23,33 @@ export default function FishCaught(props) {
     return (
         <div>
             <Link to="/">Back to All Lures</Link>
-            <h1>Live Well</h1>
-            <p>
-                ADD TO LIVEWELL : LureID: {lureId} FishCaught: {fishCaught}
-            </p>
+            <div className="row top">
+                <div className="col-2">
+                    <h1>Live Well</h1>
+                    {livewellFish.length === 0 ? <MessageBox>
+                        Livewell is empty. <Link to="/">Catch some fish!!</Link>
+                    </MessageBox>
+                    :
+                    (
+                        <ul>
+                            {
+                                livewellFish.map((fish) => (
+                                    <li key={fish.lure}>
+                                        <div className="row">
+                                            <div>
+                                                {fish.species} - {fish.weight}
+                                            </div>
+                                            <div className="min-30">
+                                                <Link to={`/lure/${fish.lure}`}>{fish.species}</Link>
+                                            </div>
+                                        </div>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    )}
+                </div>
+            </div>
         </div>
     )
 }
