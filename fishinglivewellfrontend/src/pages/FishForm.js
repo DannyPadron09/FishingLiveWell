@@ -30,11 +30,9 @@ class FishForm extends React.Component {
     //         }
     //     )
     // }
-    changeHandler = (e) => {
-        let species = e.target.name
-        let weight = e.target.value 
-        this.setState({[species]: weight})
-    }
+    // changeHandler = () => {
+    //     this.props.history.push(`/livewell/${lureId}?fishCaught=${fishCaught}`)
+    // }
 
     
 

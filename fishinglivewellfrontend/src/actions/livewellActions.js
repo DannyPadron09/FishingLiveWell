@@ -6,10 +6,11 @@ export const addToLivewell = (lureId, fishCaught) => async(dispatch, getState) =
     dispatch({
         type: LIVEWELL_ADD_FISH,
         payload:{
-            species: data.fishCaught.species,
-            weight: data.fishCaught.weight,
+            species: data.species,
+            weight: data.weight,
             lure: data._id,
             fishCaught,
         }
     })
+    localStorage.setItem('livewellFish', JSON.stringify(getState().fishCaught))
 }

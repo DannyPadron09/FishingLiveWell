@@ -23,7 +23,9 @@ export default function LurePage(props) {
         dispatch(lureStats(lureId))
     }, [dispatch, lureId])
 
-    
+    const addToLiveWell = () => {
+        props.history.push(`/livewell/${lureId}?fishCaught=${fishCaught}`)
+    }
     
     
     return (
@@ -77,7 +79,17 @@ export default function LurePage(props) {
                                     <div className="row">
                                         <div>Add new fish to the LiveWell:</div>
                                         <div>
-                                            <FishForm />
+                                        <form>    
+                                            <label>
+                                                Fish Caught: 
+                                                <input type="text" name="fishCaught" placeholder="Fish Species"  />
+                                            </label>
+                                            <label>
+                                                Weight: 
+                                                <input type="text" name="fishWeight" placeholder="Fish Weight" />
+                                            </label>
+                                            <button onClick={addToLiveWell} className="primary block">Add Fish</button>
+                                        </form>
                                         </div>
                                     </div>
                                 </li>

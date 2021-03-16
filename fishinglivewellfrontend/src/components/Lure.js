@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Checkboxes from './Checkbox'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 
 export default function Lure(props) {
@@ -10,15 +11,15 @@ export default function Lure(props) {
 
     return (
         <div key={lure._id} className="card">
-            <a href={`/lure/${lure._id}`}>
+            <Link to={`/lure/${lure._id}`}>
                 <img className="medium" src={lure.lureImage} alt={lure.product} />
-            </a>
+            </Link>
             <div className="card-body">
-                <a href={`/lure/${lure._id}`}>
+                <Link to={`/lure/${lure._id}`}>
                     <h2>{lure.lureBrand}</h2>
                     <h3>{lure.product}</h3>
                     <h3>{lure.lureColor}</h3>
-                </a>
+                </Link>
                 {/* <div className="do-i-own">
                     <span style={{marginLeft: 8}}>Do I own?</span>
                     <Checkboxes />

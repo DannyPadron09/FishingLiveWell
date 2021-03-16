@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter  as Router, Route} from 'react-router-dom'
+import { BrowserRouter  as Router, Link, Route} from 'react-router-dom'
 import FishCaught from './pages/FishCaught';
 import HomePage from './pages/HomePage';
 import LurePage from './pages/LurePage';
@@ -11,11 +11,11 @@ function App() {
         <div className="grid-container">
             <header className="row">
                 <div>
-                    <a className="brand" href="index.html">Fishing Live Well</a>
+                    <Link className="brand" to="index.html">Fishing Live Well</Link>
                 </div>
                 <div>
-                    <a href="/myLures">My Lures  </a>
-                    <a href="/signin">  Sign In</a>
+                    <Link to="/myLures">My Lures  </Link>
+                    <Link to="/signin">  Sign In</Link>
                 </div>
             </header>
             <main>
