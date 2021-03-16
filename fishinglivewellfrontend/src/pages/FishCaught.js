@@ -37,7 +37,7 @@ export default function FishCaught(props) {
                                     <li key={fish.lure}>
                                         <div className="row">
                                             <div>
-                                                {fish.species} - {fish.weight}
+                                                {fish.fishCaught} - {fish.fishWeight}
                                             </div>
                                             <div className="min-30">
                                                 <Link to={`/lure/${fish.lure}`}>{fish.species}</Link>
