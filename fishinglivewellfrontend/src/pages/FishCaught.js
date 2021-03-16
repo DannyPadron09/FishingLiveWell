@@ -21,7 +21,7 @@ export default function FishCaught(props) {
             <Link to="/">Back to All Lures</Link>
             <h1>Live Well</h1>
             <p>
-                ADD TO LIVEWELL : LureID: {lureId} FishCaught: {fishCaught.species}
+                ADD TO LIVEWELL : LureID: {lureId} FishCaught: {fishCaught}
             </p>
         </div>
     )

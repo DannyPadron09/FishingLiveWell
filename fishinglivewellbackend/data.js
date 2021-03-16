@@ -8,7 +8,7 @@ const data = {
             price: "$4.99",
             doIOwn: "true",
             lureImage: "/images/lure1.jpg",
-            fishCaught: [],
+            fishCaught: [''],
         },
         {
             _id: '2',
@@ -18,7 +18,7 @@ const data = {
             price: "$4.99",
             doIOwn: "true",
             lureImage: "/images/lure2.jpg",
-            fishCaught: [],
+            fishCaught: [''],
         },
         {
             _id: '3',
@@ -28,7 +28,7 @@ const data = {
             price: "$5.29",
             doIOwn: "true",
             lureImage: "/images/lure3.jpg",
-            fishCaught: [],
+            fishCaught: [''],
         },
         {
             _id: '4',
@@ -38,7 +38,7 @@ const data = {
             price: "$6.99",
             doIOwn: "true",
             lureImage: "/images/lure4.jpg",
-            fishCaught: [],
+            fishCaught: [''],
         },
         {
             _id: '5',
@@ -48,7 +48,7 @@ const data = {
             price: "$3.79",
             doIOwn: "true",
             lureImage: "/images/lure5.jpg",
-            fishCaught: [],
+            fishCaught: [''],
         },
         {
             _id: '6',
@@ -58,7 +58,7 @@ const data = {
             price: "$4.99",
             doIOwn: "true",
             lureImage: "/images/lure6.jpg",
-            fishCaught: [],
+            fishCaught: [''],
         },
     ]
 }
