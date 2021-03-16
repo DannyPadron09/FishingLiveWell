@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { lureStats } from '../actions/lureActions'
 import LoadingBox from '../components/LoadingBox'
 import MessageBox from '../components/MessageBox'
+import { LIVEWELL_ADD_FISH } from '../constant/livewellConstant'
 
 
 export default function LurePage(props) {
@@ -61,11 +62,6 @@ export default function LurePage(props) {
                                     Color - {lure.lureColor}
                                 </h3>
                             </li>
-                            <li>
-                                <h3>
-                                    {lure.price}
-                                </h3>
-                            </li>
                         </ul>
                     </div>
 
@@ -97,17 +93,6 @@ export default function LurePage(props) {
                                         <div>
                                             
                                         </div>
-                                        {/* <div>
-                                            <select value={fishCaught} onChange={(e) => setFishSpecies(e.target.value)}>
-                                                {[...Array(lure.fishCaught).keys()].map(
-                                                    (x) => (
-                                                        <option key={x} value={x.fishCaught}>
-                                                            {x.fishCaught}
-                                                        </option>
-                                                    )
-                                                )}
-                                            </select>
-                                        </div> */}
                                     </div>
                                 </li>
                                 <br />

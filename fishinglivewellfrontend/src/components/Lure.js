@@ -20,13 +20,6 @@ export default function Lure(props) {
                     <h3>{lure.product}</h3>
                     <h3>{lure.lureColor}</h3>
                 </Link>
-                {/* <div className="do-i-own">
-                    <span style={{marginLeft: 8}}>Do I own?</span>
-                    <Checkboxes />
-                </div> */}
-                <div className="price">
-                    {lure.price}
-                </div>
             </div>
         </div>
     )
