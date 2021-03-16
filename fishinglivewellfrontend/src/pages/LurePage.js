@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { lureStats } from '../actions/lureActions'
 import LoadingBox from '../components/LoadingBox'
 import MessageBox from '../components/MessageBox'
-import { LIVEWELL_ADD_FISH } from '../constant/livewellConstant'
 
 
 export default function LurePage(props) {
@@ -97,7 +96,6 @@ export default function LurePage(props) {
                                 </li>
                                 <br />
                                 <li>
-                                    
                                 </li>
                             </ul>
                         </div>

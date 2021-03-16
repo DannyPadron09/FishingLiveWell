@@ -15,32 +15,6 @@ class FishForm extends React.Component {
         // this.handleWeightChange = this.handleWeightChange.bind(this)
     }
 
-    // handleFishSpeciesChange(e) {
-    //     this.setState(
-    //         {
-    //             fishSpecies: e.target.value,
-    //         }
-    //     )
-    // }
-
-    // handleWeightChange(e) {
-    //     this.setState(
-    //         {
-    //             fishWeight: e.target.value,
-    //         }
-    //     )
-    // }
-    // changeHandler = () => {
-    //     this.props.history.push(`/livewell/${lureId}?fishCaught=${fishCaught}`)
-    // }
-
-    
-
-    // handleSubmit(e) {
-    //     e.preventDefault()
-    //     alert('New fish added')
-    // }
-
     render() {
         return (
             <div>

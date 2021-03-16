@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Checkboxes from './Checkbox'
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 
