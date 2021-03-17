@@ -11,6 +11,7 @@ export default function LurePage(props) {
     const dispatch = useDispatch()
     const lureId = props.match.params.id
     const [fishCaught, setFishSpecies] = useState(0)
+    const [fishWeight, setFishWeight] = useState(0)
 
     const lureDetails = useSelector((state) => state.lureDetails)
 
@@ -22,7 +23,7 @@ export default function LurePage(props) {
     }, [dispatch, lureId])
 
     const addToLiveWell = () => {
-        props.history.push(`/livewell/${lureId}?fishCaught=${fishCaught}`)
+        props.history.push(`/livewell/${lureId}?fishCaught=${fishCaught}?${fishWeight}`)
     }
     
     
@@ -79,7 +80,7 @@ export default function LurePage(props) {
                                             </label>
                                             <label>
                                                 Weight: 
-                                                <input type="text" name="fishWeight" placeholder="Fish Weight" />
+                                                <input type="text" name="fishWeight" placeholder="Fish Weight" onChange={(e) => setFishWeight(e.target.value)} />
                                             </label>
                                             <button onClick={addToLiveWell} className="primary block">Add Fish</button>
                                         </form>

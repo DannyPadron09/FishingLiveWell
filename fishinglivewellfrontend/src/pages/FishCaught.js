@@ -7,7 +7,7 @@ import MessageBox from '../components/MessageBox'
 export default function FishCaught(props) {
     const lureId = props.match.params.id 
 
-    const fishCaught = (props.location.search).slice(12).split('%20').join(' ')
+    const fishCaught = (props.location.search).slice(12).split('%20').join(' ').split('?').join(' Weight : ')
 
     const livewell = useSelector((state) => state.livewell)
     const { livewellFish } = livewell
@@ -37,7 +37,7 @@ export default function FishCaught(props) {
                                     <li key={fish.lure}>
                                         <div className="row">
                                             <div>
-                                                {fish.fishCaught} - {fish.fishWeight}
+                                                {fish.fishCaught}
                                             </div>
                                             <div className="min-30">
                                                 <Link to={`/lure/${fish.lure}`}>{fish.species}</Link>
